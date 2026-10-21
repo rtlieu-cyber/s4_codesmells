@@ -1,9 +1,11 @@
 # s4_codesmells
 
 group members:
-rayden lieu
-caden politiski
+Rayden Lieu
+Caden Politiski
+Keanu Schlank
 
 code smells chosen:
 shotgun surgery
 mysterious name
+feature envy
