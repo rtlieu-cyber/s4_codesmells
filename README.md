@@ -1,8 +1,9 @@
 # s4_codesmells
 
-made by:
+group members:
 rayden lieu
+caden politiski
 
 code smells chosen:
 shotgun surgery
-
+mysterious name
