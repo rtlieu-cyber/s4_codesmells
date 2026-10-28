@@ -21,20 +21,38 @@ The easiest way to prevent this is to name each function, variable, class, etc. 
 Fixes:
 If the code smell is already present then you will have refactor your code by changing the names to be fitting for your intentions with each function, class, and variable.
 Examples:
-```
 C++:
+```
+before:
 class Something2 {
   private:
   public:
 }
 ```
 ```
-Java:
-string Words()
+after:
+class WordSearch {
+	private:
+	public:
+}
 ```
+Java:
+```
+before:
+string Line()
+```
+```
+after:
+string errorMessage()
 ```
 Python:
+```
+before:
 def Function()
+```
+```
+after:
+def SimpleAddition()
 ```
 
 # Shotgun Surgery!
