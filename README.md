@@ -22,36 +22,36 @@ Fixes:
 If the code smell is already present then you will have refactor your code by changing the names to be fitting for your intentions with each function, class, and variable.
 Examples:
 C++:
-```
-before:
+```c++
+//before:
 class Something2 {
   private:
   public:
 }
 ```
-```
-after:
+```c++
+//after:
 class WordSearch {
-	private:
-	public:
+  private:
+  public:
 }
 ```
 Java:
-```
-before:
+```java
+//before:
 string Line()
 ```
-```
-after:
+```java
+//after:
 string errorMessage()
 ```
 Python:
-```
-before:
+```python
+#before:
 def Function()
 ```
-```
-after:
+```python
+#after:
 def SimpleAddition()
 ```
 
