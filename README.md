@@ -81,3 +81,63 @@ public class TaxCalculator
     public decimal Calculate(decimal amount) => amount * TaxRate;
 }
 ```
+
+
+# Feature Envy
+- Introduction
+When a function in one module spends more time communicating with functions or data inside another module than it does in its own module. This happens when code is placed in the wrong class. An example may be a function in one class calculates a student's average grade using grades stored in another class. This arises when logic is written in a different, open class, instead of the class that owns the data. It's a problem because related data and logic should be kept together. If the class that owns the data changes, the envious function may also need to change. Overall harder to maintain.
+
+- Prevention and Refactoring
+-Put new behavior in the class that owns the data.
+-When writing or reviewing a function, watch for one object being called repeatedly.
+-Shift the envious function to the module holding most of the data. If the whole function wants to be with the data, move it (move function). If only a part of it does, extract that part into its own function then move it (extract function -> move function).
+
+- Examples
+``` Python
+# Before
+class ReportCard:
+	def print_average(self, student):
+		avg = (student.test1 + student.test2 + student.test3) / 3
+		print(student.name, avg)
+
+# class accesses student's test scores to calculate the average
+
+# After
+class Student:
+	def average(self):
+		return (self.test1 + self.test2 + self.test3) / 3
+
+class ReportCard:
+	def print_average(self, student):
+		print(student.name, student.average())
+
+# class calculates its own average
+```
+``` Java
+//Before
+class Mechanic {
+	void printSpeed(Car car) {
+		System.out.println(car.distance / car.time);
+	}
+}
+
+/*mechanic accesses car's data to calculate its speed*/
+
+//After
+class Car {
+	double distance, time;
+
+	double speed() {
+		return distance / time;
+	}
+}
+
+class Mechanic {
+	void printSpeed(Car car) {
+		System.out.println(car.speed());
+	}
+}
+
+/*car calculates its own speed*/
+```
+
