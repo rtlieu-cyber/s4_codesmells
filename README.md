@@ -21,16 +21,21 @@ The easiest way to prevent this is to name each function, variable, class, etc. 
 Fixes:
 If the code smell is already present then you will have refactor your code by changing the names to be fitting for your intentions with each function, class, and variable.
 Examples:
+```
 C++:
 class Something2 {
   private:
   public:
 }
+```
+```
 Java:
 string Words()
+```
+```
 Python:
 def Function()
-
+```
 
 # Shotgun Surgery!
 
